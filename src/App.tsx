@@ -1,7 +1,7 @@
 import { AIConversation, createAIHooks } from '@aws-amplify/ui-react-ai';
 import { generateClient } from 'aws-amplify/api';
 import { Schema } from '../amplify/data/resource';
-import { Authenticator, Card } from '@aws-amplify/ui-react';
+import { Card } from '@aws-amplify/ui-react';
 
 const client = generateClient<Schema>({ authMode: "userPool" });
 const { useAIConversation } = createAIHooks(client);

@@ -1,7 +1,7 @@
 import { AIConversation, createAIHooks } from '@aws-amplify/ui-react-ai';
 import { generateClient } from 'aws-amplify/api';
 import { Schema } from '../amplify/data/resource';
-import { Card } from '@aws-amplify/ui-react';
+import { Authenticator, Card } from '@aws-amplify/ui-react';
 
 const client = generateClient<Schema>();
 
@@ -17,7 +17,7 @@ export default function App() {
   // 'chat' is based on the key for the conversation route in your schema.
 
   return (
-    // <Authenticator>
+    <Authenticator>
       <Card>
         <AIConversation
           messages={messages}
@@ -31,6 +31,6 @@ export default function App() {
         />
       </Card>
       
-    // </Authenticator>
+    </Authenticator>
   );
 }

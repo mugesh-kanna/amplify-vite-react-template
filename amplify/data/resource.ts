@@ -13,7 +13,7 @@ const schema = a.schema({
   }),
     
   generateRecipe: a.generation({
-    aiModel: a.ai.model('Claude 3 Sonnet'),
+    aiModel: a.ai.model('Claude 3.5 Sonnet'),
     systemPrompt: 'You are a helpful assistant that generates recipes.',
   })
   .arguments({
@@ -32,13 +32,13 @@ export type Schema = ClientSchema<typeof schema>;
 
 export const data = defineData({
   schema,
-  // authorizationModes: {
-  //   defaultAuthorizationMode: "userPool",
-  //   // API Key is used for a.allow.public() rules
-  //   // apiKeyAuthorizationMode: {
-  //   //   expiresInDays: 30,
-  //   // },
-  // },
+  authorizationModes: {
+    defaultAuthorizationMode: "userPool",
+    // API Key is used for a.allow.public() rules
+    apiKeyAuthorizationMode: {
+      expiresInDays: 30,
+    },
+  },
 });
 
 /*== STEP 2 ===============================================================

@@ -4,9 +4,9 @@ import { Schema } from '../amplify/data/resource';
 import { Card } from '@aws-amplify/ui-react';
 
 const client = generateClient<Schema>();
-const { useAIConversation } = createAIHooks(client);
 
 export default function App() {
+  const { useAIConversation } = createAIHooks(client);
   const [
     {
       data: { messages },
